@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Vithkuqi:wght@400;700&family=Raleway:wght@400;700;800&family=Tektur:wght@400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background-imagen: url("../img/fondo32.jpg");
+    --fuente:'Raleway', 'sans-serif';
+    --color-fuente: #f1faee;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--background-imagen);
+    background-position: center;
+    background-size: cover;
+}
+
+.login{
+    display: flex;
+    width: 70%;
+    height: 80vh;
+    background-image: var(--background-imagen);
+    background-position: center;
+    background-size: cover;   
+    box-shadow: 0px 0px 20px white;
+}
+
+.login__presentation{
+   flex-grow: 1;
+}
+
+.login__form{
+    width: 35%;
+    padding: 30px 20px;
+    backdrop-filter: blur(15px);
+    color: var(--color-fuente);
+}
+
+.login__tittle{
+    margin-top: 40px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.login__form__input{
+    display: block;
+    width: 100%;
+    margin:20px auto;
+    outline: none;
+    padding: 10px 5px;
+    background: transparent;
+    border: none;
+    color: var(--color-fuente);
+    border-bottom: 2px solid white;
+}
+
+.login__form__input::placeholder{
+    color: white;
+}
+
+.label_check{
+    display: block;
+    margin-top: 30px;
+}
+
+
+.btn__ingresar{
+    display: block;
+    width: 100%;
+    margin-top: 60px;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.credentiales{
+    margin-top: 30px;
+    text-align: center;
+}
+.credentiales a{
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+}
+
+@media screen and (max-width:731px){
+
+    .login__presentation{
+        display: none;
+    }
+
+    .login__form{
+        width: 100%;
+    }
+
+}

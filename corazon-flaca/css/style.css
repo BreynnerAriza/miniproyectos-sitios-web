@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container{
+    position: relative;
+    width: 300px;
+    height: 300px;        
+}
+
+.heart{
+    width: 100%;
+    animation-name: palpito;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes palpito{
+
+
+    100%{
+        
+        transform: scale(1.5);
+    }
+}

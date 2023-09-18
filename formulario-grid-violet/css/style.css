@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --color-primary: #7400b8;
+    --color-secundary: #6930c3;
+    --font: 'Raleway', sans-serif;
+    --path: polygon(50% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+body{
+    font-family: var(--font);
+}
+
+.contact{
+    height: 100vh;
+    width: 100%;
+    min-height: 700px;   
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;    
+}
+
+.contact__picture{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-column: 2 / span 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contact__img{
+    width: 80%;
+    min-width: 380px;
+}
+
+.contact__picture::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--color-primary);
+    clip-path: var(--path);
+}
+
+
+/* Estilos del formulario */
+
+.contact__form{
+    width: 80%;
+    min-width: 350px;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px;
+}
+
+.contact__tittle{
+    font-size: 2.5rem;
+    color:var(--color-secundary);
+}
+
+.contact__tittle::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.contact__input{
+    padding: 10px 5px;
+}
+
+.contact__input:focus{
+    outline: none;
+}
+
+.contact__input--area{
+    resize: none;
+    height: 150px;
+}
+
+.cta{
+    width: min-content;
+    display: inline-block;
+    padding: 10px 30px;    
+    color: white;
+    background-color: var(--color-secundary);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px var(--color-secundary);
+}
+
+
+
+/* Estilos de medias */
+
+@media screen and (hover:hover){
+
+    .cta:hover{
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width:768px){
+    :root{
+        --path: polygon(0 0, 0% 100%, 100% 100%);
+
+    }
+
+    .contact{       
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .contact__picture{
+        grid-row: 1 / 2;
+        grid-column: span 1;
+        justify-content: center;
+    }
+
+    .contact__form{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:390px){
+
+    .contact__tittle{
+        font-size: 2rem;
+    }
+    
+    .contact__input--area{
+        height: 100px;
+    }
+
+}

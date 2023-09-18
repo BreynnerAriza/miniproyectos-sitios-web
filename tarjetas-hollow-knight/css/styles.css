@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Tilt+Prism&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-tittle: 'Tilt Prism', cursive;
+    --font-paragraph : 'Merriweather', serif;
+    --color-font:white;
+    --color--background: #343a40;
+}
+
+
+.personajes{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0.1px;
+    background-image: linear-gradient(var(--color--background),var(--color--background));    
+}
+
+.personajes__containt{
+    width: 90%;
+    max-width: 1200px;
+    min-width: 390px;
+    margin: 70px auto;
+}
+
+.personajes__tittle{
+    width: 90%;
+    margin: auto;
+    color: var(--color-font);
+    font-family: var(--font-tittle);
+    font-size: 2rem;
+}
+
+.personajes__tittle::after{
+    content: "";
+    display: block;
+    width: 70%;
+    height: 3px;
+    background-color: white;
+}
+
+
+
+/* Estilos del contenedor de las cartas */
+
+.cards-container{
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,350px);
+    grid-auto-rows: minmax(350px, 450px);    
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+/* Estilo de la carta */
+.card{
+    width: 100%;
+    height: 100%;    
+    color: var(--color-font);
+    background-color: #212529;    
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5),inset 0px 0px 15px black;
+}
+
+/* Estilo de la imgen de la carta */
+.card__figure{
+    height: 45%;
+}
+
+.card__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+
+/* Estilo del texto de la carta */
+.card__containt{    
+    height: 55%;
+    margin: 15px auto;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__tittle{
+    font-size: 1.5rem;
+    font-family: var(--font-tittle);
+    border-bottom: 2px solid white;
+}
+
+.card__description{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: var(--font-paragraph);
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.card__cta{         
+    display: inline-block;    
+    width: 30%;   
+    color: var(--color-font);
+    margin: auto 0 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
+
+
+@media screen and (hover:hover){
+    .card__cta:hover{
+        color: black;
+        background-color: rgba(255, 255, 255, 0.764);
+    }
+}
+
+@media screen and (max-width:768px){
+    .cards-container{
+        grid-template-columns: repeat(auto-fit,300px);
+    }
+}

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spiderman{
+    width: 90%;
+    height: 80vh;    
+    max-width: 500px;
+    background-color: #ef233c;
+    overflow: hidden;
+    text-align: center;
+    
+
+}
+
+.spiderman__img{
+    width: 40%;
+    
+
+    /* transition-duration: 2s;
+    transition-timing-function: ease-out; */
+
+    /* Propiedades de animaciones */
+    animation-name: telarania;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 3s;
+   
+}
+
+/* .spiderman:hover .spiderman__img{
+    transform: translateY(0);
+    transition-property: transform;   
+
+} */
+
+
+@keyframes telarania{
+
+    0%{
+        transform: translateY(-90px);
+    }
+
+
+    100%{
+        transform: translateY(0px) rotate(0);              
+    }
+
+}

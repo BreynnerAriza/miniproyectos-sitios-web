@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    display: flex;
+}
+
+
+:root{
+    --color-tittle:#0077b6;
+    --clipath-show:circle(141.4% at 100% 0);
+    --clipat-ocult: circle(0.0% at 100% 0);
+
+    --scale-modal-container: scale(0);
+
+
+
+    /* property name | duration | easing function | delay */
+    --show-modal: clip-path 1s ease-out .5s;
+    --scale-modal: transform .5s linear;
+}
+
+
+/* Estilos del boton para mostrar la modal */
+
+.mostrar__modal{
+    margin: auto;
+    background-color: var(--color-tittle);
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 0 10px 0 10px;    
+    
+}
+
+
+/* Estilos del modal */
+.modal{
+    position: fixed;
+    width: 100%;
+    min-height: 100Vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.522);
+    clip-path: var(--clipat-ocult);
+   
+    /* Estilos de la transicion */
+    transition: var(--show-modal);
+}
+
+
+.modal:target{
+    --show-modal:clip-path 1s ease-out;
+    --scale-modal: transform .5s linear 1s;
+    --scale-modal-container: scale(1);
+    
+    clip-path: var(--clipath-show);
+}
+
+
+.modal__container{
+    position: relative;
+    width: 60%;
+    min-height: 80vh;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    display: flex;  
+    flex-direction: column;  
+    border-radius: 30px 0 30px 0;
+
+    transform: var(--scale-modal-container);
+
+    /* Estilos de la transicion */
+    transition: var(--scale-modal);
+}
+
+
+
+/* Estilos del titulo */
+.modal__tittle{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-tittle);
+}
+
+.modal__tittle::after{
+    content: "";
+    width: 80%;
+    height: 3px;
+    display: block;
+    background-color: var(--color-tittle);
+}
+
+/* Estilo de la imagen */
+.modal__figure{
+    width: 70%;
+    min-width: 350px;
+    margin: 30px auto;
+}
+
+.modal__img{
+    display: block;
+    width: 70%;
+    margin: auto;
+}
+
+.modal__cta{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: auto;
+    text-decoration: none;
+    color: white;
+    background-color: #0077b6;
+    border-radius: 5px 0 5px 0;
+}
+
+.modal__close{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #ef233c;
+}
+

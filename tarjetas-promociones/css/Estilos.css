@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Serif+Vithkuqi:wght@400;700&family=Raleway:wght@400;700;800;900&family=Tektur:wght@400;600;700&display=swap');
+
+/* REINICIAR TODOS LOS ESTILOS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'sans-serif';
+}
+
+:root{    
+    --tamanio-descripcion: 0.8rem;
+    --color-secundario:#959ea7;
+    --color--destacado: #824bda;
+    --color--bordes:#e9ecef;
+    --fondo--tarjetas:#ffffff;
+}
+
+body{
+    background-color: #e9ecef;
+}
+
+.planes{
+    width: 80%;
+    min-height: 100vh;
+    padding: 20px;
+    margin: auto;
+    background-color: var(--fondo--tarjetas);
+}
+
+.planes__header{
+    text-align: center;
+}
+
+.planes__titulo{
+    margin: 15px;
+    font-size: 2rem; 
+    font-weight: 900;     
+}
+
+.planes__descripcion{
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--color-secundario);
+}
+
+.promocion{    
+    display: flex;
+    margin: 2rem 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.promocion__card{
+    width: 30%;
+    padding: 20px;
+    border: 1px solid var(--color--bordes);
+    border-radius: 10px;
+}
+
+.promocion__tipo{
+    font-size: var(--tamanio-descripcion);
+}
+
+.promocion__precio{
+    margin: 20px 0 10px;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.promocion__tiempo{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.promocion__descripcion{
+    color: var(--color-secundario);
+    font-size: var(--tamanio-descripcion);
+}
+
+.promocion__boton{
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 30px auto;
+    font-size: var(--tamanio-descripcion);
+    font-weight: 800;
+    background-color: var(--fondo--tarjetas);
+    color: var(--color--destacado);
+    border: 1px solid var(--color--bordes);
+    border-radius: 5px;
+}
+
+.promocion__boton--destacada{
+    color: var(--fondo--tarjetas);
+    background-color: var(--color--destacado);
+}
+
+.promocion__titulo{
+    margin: 20px 0;
+    text-align: start;
+    font-size: var(--tamanio-descripcion);    
+}
+
+.promocion__lista{
+    list-style: none;
+}
+
+.promocion__lista li{
+    margin: 12px 0;
+    font-size: var(--tamanio-descripcion);
+    color: var(--color-secundario);
+}
+
+
+.promocion__lista i{
+    color: var(--color--destacado);
+}
+
+
+
+@media screen and (hover:hover){
+    .promocion__boton{
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (min-width:320px) and (max-width:768px){
+
+    .planes__titulo{
+        font-size: 1.5rem;
+    }
+    .planes__descripcion{
+        width: 90%;
+        margin: 20px auto;
+        font-size: 1rem;
+        text-align: start;
+    }
+}
+
+
+@media screen and (min-width:300px) and (max-width:1024px){
+
+    .promocion{        
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .promocion__card{
+        width: 70%;
+        min-width: 250px;
+        max-width: 700px;
+        margin: 15px auto;
+    }
+}

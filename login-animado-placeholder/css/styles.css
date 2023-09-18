@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font:'Raleway', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: var(--font);
+    background-color: #e9ecef;
+}
+
+.register{
+    width: 90%;
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 50px 1fr 50px;
+}
+
+
+.form{
+    grid-row: 2 / 3;
+    grid-column: 1/3;
+    z-index: 1;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos del titlo */
+
+.form__tittle{
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.form__paragraph{
+    line-height: 1.7rem;
+    color: #adb5bd;
+}
+
+.form__paragraph > a{
+    color: black;
+    font-weight: 700;
+}
+
+
+
+/* Estilos de los Inputs */
+.form__group{
+    position: relative;
+}
+
+.form__inputs{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form__input{
+    font-size: .8rem;
+    font-family: var(--font);
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    outline: none;
+}
+
+.form__line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #a2d2ff;
+    transform: scale(0);
+    transition-duration: 1s;
+    transform-origin: bottom left;
+}
+
+.form__input:focus ~ .form__line{
+    transform: scale(1);
+}
+
+
+
+
+/* Estilos del label */
+.form__label{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    pointer-events: none;
+    transform: scale(1);
+    transition-duration: .5s;
+    transform-origin: top left;
+}
+
+.form__input:focus + .form__label,.form__input:not(:placeholder-shown) + .form__label{
+    transform: scale(.7) translateY(-150%);
+
+}
+
+
+
+.form__submit{
+    margin: 50px auto;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    padding: 10px 40px;
+    background-color: black;
+    
+}
+
+
+
+/* Estilos para el fondo del formulario */
+.register__background{   
+    grid-row: 1/-1;
+    grid-column: 2/-1;
+    background-image: url("../img/image.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}

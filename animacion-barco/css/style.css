@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.svg{
+    display: block;
+    width: 30%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#barco{
+    transform: translateX(0%);    
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes move {
+    0%{
+        transform: translateX(-100%);   
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    to{
+       transform: translateX(100%);
+    }
+    
+}

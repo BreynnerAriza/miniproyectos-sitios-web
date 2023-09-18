@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --horizontal: 100%;
+    --vertical: 3px;
+    --direccion: to top;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.box{
+    position: relative;
+    background-color: #2b2d42;
+    color: white;
+    padding: 60px 240px;     
+    overflow: hidden;
+}
+
+.border{
+    display: block;
+    position: absolute;
+    width: var(--horizontal);
+    height: var(--vertical);
+    background: linear-gradient(var(--direccion), #6a040f, #d00000, #dc2f02, #f48c06, #f89d07, #ffba08);
+    border-radius: 5px;
+    
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.border-top{
+    --direccion: to left;
+    top: 0;
+    left: 0;
+}
+
+.border-bottom{
+    --direccion: to right;
+    bottom: 0;
+    right: 0;
+    animation-direction: reverse;
+}
+
+.border-top,.border-bottom{
+    animation-name: animation-horizontal;
+}
+
+
+.border-right{
+    --direccion: to top;
+    top: 0;
+    right: 0;
+   
+}
+
+.border-left{
+    --direccion: to bottom;
+    bottom: 0;
+    left: 0;
+    animation-direction: reverse;
+}
+
+.border-right,.border-left{    
+    animation-name: animation-vertical;
+    --vertical: 100%;
+    --horizontal: 4px;   
+    animation-delay: 1s;
+}
+
+
+@keyframes animation-vertical{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+
+
+@keyframes animation-horizontal {
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(100%);
+    }
+}
